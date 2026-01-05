@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPay by Olawale Abdul-Ganiyu | Global Digital Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Login Page -->
+        <div id="loginPage" class="page active">
+            <div class="login-container">
+                <div class="logo-section">
+                    <div class="logo">💰</div>
+                    <h1>MiniPay</h1>
+                    <p class="tagline">Global Digital Wallet by Olawale Abdul-Ganiyu</p>
+                </div>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+                        <p><a href="#" id="showAdminLogin">Admin Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Registration Page -->
+        <div id="registerPage" class="page">
+            <div class="register-container">
+                <div class="logo-section">
+                    <div class="logo">💰</div>
+                    <h1>Create Account</h1>
+                    <p class="tagline">Join MiniPay by Olawale Abdul-Ganiyu</p>
+                </div>
+                
+                <form id="registerForm" class="register-form">
+                    <div class="form-group">
+                        <label for="regFullName">Full Name</label>
+                        <input type="text" id="regFullName" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regEmail">Email Address</label>
+                        <input type="email" id="regEmail" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regPhone">Phone Number</label>
+                        <input type="tel" id="regPhone" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="Create a password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Admin Login Page -->
+        <div id="adminLoginPage" class="page">
+            <div class="admin-login-container">
+                <div class="logo-section">
+                    <div class="logo admin-logo">🔐</div>
+                    <h1>Admin Dashboard</h1>
+                    <p class="tagline">MiniPay Administration</p>
+                </div>
+                
+                <form id="adminLoginForm" class="admin-login-form">
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email</label>
+                        <input type="email" id="adminEmail" placeholder="Enter admin email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-admin">Admin Login</button>
+                    
+                    <div class="form-footer">
+                        <p><a href="#" id="showCustomerLogin">Customer Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboardPage" class="page">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <span class="logo">💰</span>
+                    <span>MiniPay</span>
+                </div>
+                <div class="nav-user">
+                    <span id="userName">Welcome</span>
+                    <button id="logoutBtn" class="btn btn-sm">Logout</button>
+                </div>
+            </nav>
+
+            <div class="dashboard-content">
+                <div class="balance-card">
+                    <div class="balance-header">
+                        <h2>Total Balance</h2>
+                        <span class="balance-amount">$<span id="totalBalance">0.00</span></span>
+                    </div>
+                    <div class="account-info">
+                        <p><strong>Account Number:</strong> <span id="accountNumber">-</span></p>
+                        <p><strong>Account Holder:</strong> <span id="accountHolder">-</span></p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn" id="addCreditBtn">
+                        <span class="btn-icon">➕</span>
+                        <span>Add Credit</span>
+                    </button>
+                    <button class="action-btn" id="addDebitBtn">
+                        <span class="btn-icon">➖</span>
+                        <span>Add Debit</span>
+                    </button>
+                    <button class="action-btn" id="editBalanceBtn">
+                        <span class="btn-icon">✏️</span>
+                        <span>Edit Balance</span>
+                    </button>
+                    <button class="action-btn" id="sendMoneyBtn">
+                        <span class="btn-icon">📤</span>
+                        <span>Send Money</span>
+                    </button>
+                    <button class="action-btn" id="receiveMoneyBtn">
+                        <span class="btn-icon">📥</span>
+                        <span>Receive Money</span>
+                    </button>
+                    <button class="action-btn" id="historyBtn">
+                        <span class="btn-icon">📊</span>
+                        <span>History</span>
+                    </button>
+                </div>
+
+                <div class="recent-transactions">
+                    <h3>Recent Transactions</h3>
+                    <div id="transactionsList" class="transactions-list">
+                        <p class="no-transactions">No transactions yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard Page -->
+        <div id="adminDashboardPage" class="page">
+            <nav class="navbar admin-nav">
+                <div class="nav-brand">
+                    <span class="logo">🔐</span>
+                    <span>MiniPay Admin</span>
+                </div>
+                <div class="nav-user">
+                    <span id="adminUserName">Admin</span>
+                    <button id="adminLogoutBtn" class="btn btn-sm">Logout</button>
+                </div>
+            </nav>
+
+            <div class="admin-dashboard-content">
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p class="stat-value" id="totalUsers">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Transactions</h3>
+                        <p class="stat-value" id="totalTransactions">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Volume</h3>
+                        <p class="stat-value">$<span id="totalVolume">0.00</span></p>
+                    </div>
+                </div>
+
+                <div class="admin-actions">
+                    <button class="admin-action-btn" id="manageUsersBtn">
+                        <span>👥</span>
+                        <span>Manage Users</span>
+                    </button>
+                    <button class="admin-action-btn" id="viewAllTransactionsBtn">
+                        <span>📊</span>
+                        <span>All Transactions</span>
+                    </button>
+                    <button class="admin-action-btn" id="editUserBalanceBtn">
+                        <span>💰</span>
+                        <span>Edit User Balance</span>
+                    </button>
+                    <button class="admin-action-btn" id="systemSettingsBtn">
+                        <span>⚙️</span>
+                        <span>System Settings</span>
+                    </button>
+                </div>
+
+                <div class="admin-table-section">
+                    <h3>Recent Users</h3>
+                    <div id="usersList" class="admin-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Account #</th>
+                                    <th>Balance</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Templates -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
