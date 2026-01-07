@@ -288,7 +288,7 @@ class GlobalPayApp {
         this.loadRecentTransactions();
         this.closeModal();
         this.showNotification(`$${this.formatCurrency(amount)} added to your balance`, 'success');
-    }
+    } 
 
     showAddDebitModal() {
         const modalContent = `
