@@ -1,11 +1,11 @@
-// MiniPay Application - Full JavaScript Implementation
+// GlobalPay Application - Full JavaScript Implementation
 // Developed by Olawale Abdul-Ganiyu
 
-class MiniPayApp {
+class GlobalPayApp {
     constructor() {
         this.currentUser = null;
         this.isAdmin = false;
-        this.API_BASE_URL = 'https://api.olawale-minipay.com/v1';
+        this.API_BASE_URL = 'https://api.olawale-globalpay.com/v1';
         this.ADMIN_CREDENTIALS = {
             email: 'olawalztegan@gmail.com',
             password: 'admin123' // In production, this should be properly hashed
@@ -22,17 +22,17 @@ class MiniPayApp {
 
     initializeData() {
         // Initialize local storage with default data
-        if (!localStorage.getItem('minipay_users')) {
+        if (!localStorage.getItem('globalpay_users')) {
             const defaultUsers = [];
-            localStorage.setItem('minipay_users', JSON.stringify(defaultUsers));
+            localStorage.setItem('globalpay_users', JSON.stringify(defaultUsers));
         }
 
-        if (!localStorage.getItem('minipay_transactions')) {
+        if (!localStorage.getItem('globalpay_transactions')) {
             const defaultTransactions = [];
-            localStorage.setItem('minipay_transactions', JSON.stringify(defaultTransactions));
+            localStorage.setItem('globalpay_transactions', JSON.stringify(defaultTransactions));
         }
 
-        if (!localStorage.getItem('minipay_system')) {
+        if (!localStorage.getItem('globalpay_system')) {
             const systemSettings = {
                 totalVolume: 0,
                 apiVersion: '1.0.0',
@@ -40,7 +40,7 @@ class MiniPayApp {
                 googleAccount: 'olawalztegan@gmail.com',
                 createdAt: new Date().toISOString()
             };
-            localStorage.setItem('minipay_system', JSON.stringify(systemSettings));
+            localStorage.setItem('globalpay_system', JSON.stringify(systemSettings));
         }
     }
 
